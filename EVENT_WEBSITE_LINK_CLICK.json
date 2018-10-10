@@ -1,0 +1,243 @@
+{
+  "type": "record",
+  "name": "EVENT_WEBSITE_LINK_CLICK",
+  "namespace": "me.data-for.schema-registry",
+  "doc": "Website button click event, sent from a link onclick() function",
+  "fields": [
+    {
+      "name": "_proxy_name",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null,
+      "doc": "Proxy software name, e.g. NiFi"
+    },
+    {
+      "name": "_proxy_version",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null,
+      "doc": "Proxy software version, e.g. 1.7.1"
+    },
+    {
+      "name": "_proxy_timestamp",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null,
+      "doc": "Proxy processing start time, UTC timestamp, e.g. 2018-10-05T09:18:43.173Z"
+    },
+    {
+      "name": "_proxy_origin",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null,
+      "doc": "Information about the event origin set by proxy, e.g. 127.0.0.1"
+    },
+    {
+      "name": "context",
+      "type": "string",
+      "doc": "e.g. WEBSITE, APP, FUNNEL, DEVICE"
+    },
+    {
+      "name": "object",
+      "type": "string",
+      "doc": "e.g. PAGE, ACTIVITY, BUTTON, SCREEN, ORDER, CUSTOMER, ADDRESS"
+    },
+    {
+      "name": "object_id",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null,
+      "doc": "e.g. SETTINGS, ActivityMain, MainPage->FunnelStart, 123456789, customer@example.com"
+    },
+    {
+      "name": "action",
+      "type": "string",
+      "doc": "e.g. VIEW, CLICK, SCROLL, TURN_ON, CREATE, CHANGE"
+    },
+    {
+      "name": "origin",
+      "type": "string",
+      "doc": "e.g. BROWSER, APP, DEVICE"
+    },
+    {
+      "name": "origin_id",
+      "type": "string",
+      "doc": "Browser Cookie, Device ID, backend version, e.g. e26e3bf4-c11b-4342-ab29-c2bb93f6cf98"
+    },
+    {
+      "name": "actor",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null,
+      "doc": "e.g. CUSTOMER, USER, BACKEND"
+    },
+    {
+      "name": "actor_id",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null,
+      "doc": "e.g. 123456789, user@example.com, ex-app-api"
+    },
+    {
+      "name": "session_id",
+      "type": "string",
+      "doc": "Website session, or application run, UUID, e.g. e26e3bf4-c11b-4342-ab29-c2bb93f6cf98"
+    },
+    {
+      "name": "event_id",
+      "type": "string",
+      "doc": "UUID, e.g. e26e3bf4-c11b-4342-ab29-c2bb93f6cf98"
+    },
+    {
+      "name": "event_timestamp",
+      "type": "string",
+      "doc": "UTC timestamp, e.g. 2018-10-05T09:18:43.173Z"
+    },
+    {
+      "name": "timezone_offset",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null,
+      "doc": "Timezone offset in hours, e.g. 2"
+    },
+    {
+      "name": "schema_version",
+      "type": "string",
+      "doc": "Schema Registry schema (EVENT_<context>_<object>_<action>) version, e.g. v.5"
+    },
+    {
+      "name": "content_type",
+      "type": "string",
+      "doc": "e.g. application/json"
+    },
+    {
+      "name": "content",
+      "type": {
+        "type": "record",
+        "name": "content",
+        "fields": [
+          {
+            "name": "url",
+            "type": "string",
+            "doc": "e.g. https://en.wikipedia.org/wiki/User_agent"
+          },
+          {
+            "name": "url_protocol",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null,
+            "doc": "e.g. https:"
+          },
+          {
+            "name": "url_domain_name",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null,
+            "doc": "e.g. en.wikipedia.org"
+          },
+          {
+            "name": "url_port",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null,
+            "doc": "e.g. 8080"
+          },
+          {
+            "name": "url_path",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null,
+            "doc": "e.g. /wiki/User_agent"
+          },
+          {
+            "name": "url_referral",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null,
+            "doc": "e.g. https://en.wikipedia.org/wiki/Wikipedia:About"
+          },
+          {
+            "name": "app_user_agent",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null,
+            "doc": "e.g. Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
+          },
+          {
+            "name": "app_language",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null,
+            "doc": "e.g. en-US"
+          },
+          {
+            "name": "app_platform",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null,
+            "doc": "e.g. MacIntel"
+          },
+          {
+            "name": "device_type",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null,
+            "doc": "e.g. Mobile"
+          },
+          {
+            "name": "device_screen_width",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null,
+            "doc": "e.g. 1920"
+          },
+          {
+            "name": "device_screen_height",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null,
+            "doc": "e.g. 1200"
+          }
+        ]
+      }
+    }
+  ]
+}
