@@ -28,10 +28,10 @@ This repository contains AVRO schemas of the events in JSON format that can be p
 ## Examples
 
 Format:
-*context/object-<object_id>/action/origin-<origin_id>/actor-<actor_id>*
+*context/object-\<object_id>/action/origin-\<origin_id>/actor-\<actor_id>*
 
-- WEBSITE/PAGE-<url>/VIEW/BROWSER-<uuid>
-- WEBSITE/LINK-<html>/CLICK/BROWSER-<uuid>
-- WEBSITE/BUTTON-<html>/CLICK/BROWSER-<uuid>
-- ANDROID/SCREEN/TURN_ON/DEVICE-<uuid>
-- ANDROID/SCREEN/TURN_OFF/DEVICE-<uuid>
+- WEBSITE/PAGE-\<url>/VIEW/BROWSER-\<uuid>
+- WEBSITE/LINK-\<html>/CLICK/BROWSER-\<uuid>
+- WEBSITE/BUTTON-\<html>/CLICK/BROWSER-\<uuid>
+- ANDROID/SCREEN/TURN_ON/DEVICE-\<uuid>
+- ANDROID/SCREEN/TURN_OFF/DEVICE-\<uuid>
