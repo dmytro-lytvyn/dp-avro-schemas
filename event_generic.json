@@ -1,0 +1,129 @@
+{
+  "type": "record",
+  "name": "event_generic",
+  "namespace": "me.data-for.schema-registry",
+  "doc": "Default schema for generic Data Platform events",
+  "fields": [
+    {
+      "name": "_proxy_name",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null,
+      "doc": "Proxy software name, e.g. NiFi"
+    },
+    {
+      "name": "_proxy_version",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null,
+      "doc": "Proxy software version, e.g. 1.7.1"
+    },
+    {
+      "name": "_proxy_timestamp",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null,
+      "doc": "Proxy processing start time, UTC timestamp, e.g. 2018-10-05T09:18:43.173Z"
+    },
+    {
+      "name": "_proxy_origin",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null,
+      "doc": "Information about the event origin set by proxy, e.g. 127.0.0.1"
+    },
+    {
+      "name": "event_id",
+      "type": "string",
+      "doc": "UUID, e.g. e26e3bf4-c11b-4342-ab29-c2bb93f6cf98"
+    },
+    {
+      "name": "event_timestamp",
+      "type": "string",
+      "doc": "UTC timestamp, e.g. 2018-10-05T09:18:43.173Z"
+    },
+    {
+      "name": "origin",
+      "doc": "Defines the entity that issued the event",
+      "type": {
+        "type": "record",
+        "name": "origin",
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "doc": "Identifier of the origin entity, can be an application name and version, or a unique device id"
+          },
+          {
+            "name": "type",
+            "type": "string",
+            "doc": "Type of the origin entity, for example backend, application or website_browser"
+          }
+        ]
+      }
+    },
+    {
+      "name": "actor",
+      "doc": "Defines the entity that performed the action",
+      "type": {
+        "type": "record",
+        "name": "actor",
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "doc": "Identifier of the actor entity, can be a business key of the entity, like customer_id or user_id"
+          },
+          {
+            "name": "type",
+            "type": "string",
+            "doc": "Type of the actor entity, for example customer, user or website_visitor"
+          }
+        ]
+      }
+    },
+    {
+      "name": "subject",
+      "doc": "Defines the entity that was a subject of the action, can contain attributes sub-object",
+      "type": {
+        "type": "record",
+        "name": "subject",
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "doc": "Identifier of the subject entity, can be a business key of the entity, like customer_id, order_id, website URL or A/B test name"
+          },
+          {
+            "name": "type",
+            "type": "string",
+            "doc": "Type of the subject entity, for example customer, order, website_page or ab_test"
+          }
+        ]
+      }
+    },
+    {
+      "name": "action",
+      "doc": "Defines the name of the action, performed by actor on a subject, can contain attributes sub-object",
+      "type": {
+        "type": "record",
+        "name": "action",
+        "fields": [
+          {
+            "name": "type",
+            "type": "string",
+            "doc": "Type of the action, for example view, create, change etc."
+          }
+        ]
+      }
+    }
+  ]
+}
